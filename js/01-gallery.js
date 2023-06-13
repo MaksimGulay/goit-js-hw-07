@@ -21,13 +21,19 @@ galleryList.addEventListener('click', event => {
 
   const target = event.target;
   if (target.nodeName !== 'IMG') return;
-  // const largeImageURL = target.closest('.gallery__link').href;
   const largeImageURL = target.dataset.source;
+  const instance = basicLightbox.create(`
+        <img src="${largeImageURL}" width="800" height="600">
+      `);
+
+      instance.show();
   console.log(largeImageURL);
 });
 
-
 console.log (galleryList);
+
+
+
 
 
 
