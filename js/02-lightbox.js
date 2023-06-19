@@ -15,15 +15,7 @@ gallaryList.innerHTML = markup;
 var lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionsData: "alt",
-});
-
-gallaryList.addEventListener('click', event => {
-    event.preventDefault();
-    
-    const target = event.target;
-    if (target.nodeName !== 'IMG') return;
-    const largeImageURL = target.dataset.source;
-    console.log(largeImageURL);
+    spinner: true,
 });
 
 console.log(galleryItems);

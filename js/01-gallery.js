@@ -27,6 +27,21 @@ galleryList.addEventListener('click', event => {
       `);
 
       instance.show();
+
+      const closeLightbox = () => {
+        instance.close();
+        document.removeEventListener('keydown', handleKeyPress);
+      };
+
+      const handleKeyPress = (event) => {
+        if (event.key === 'Escape') {
+          closeLightbox();
+        }
+      };
+
+      instance.element().addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', handleKeyPress);
+    
   console.log(largeImageURL);
 });
 
